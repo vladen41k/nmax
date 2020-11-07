@@ -27,6 +27,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (= 2.1.4)
   byebug
   nmax!
   rake (~> 12.0)
