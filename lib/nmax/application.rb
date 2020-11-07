@@ -16,7 +16,7 @@ module Nmax
     end
 
     def call
-      return WRONG_ARGUMENT unless number.positive?
+      return puts(WRONG_ARGUMENT) unless number.positive?
 
       result = search
 
@@ -33,7 +33,7 @@ module Nmax
         else
           next if arr.empty?
 
-          number_str = arr.join
+          number_str = arr.join.to_i
           arr.clear && next if number_str.size >= MAX_COUNT
 
           array_of_integer << number_str
@@ -47,9 +47,9 @@ module Nmax
     def return_numbers(set)
       arr = set.to_a.sort[-number..-1]
       if arr.nil?
-        NOT_SUCH_NUMBER
+        puts NOT_SUCH_NUMBER
       else
-        arr.inject { |a, b| a + ', ' + b }
+        puts(arr.sort.inject { |a, b| a.to_s + ', ' + b.to_s })
       end
     end
   end

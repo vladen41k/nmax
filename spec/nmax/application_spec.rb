@@ -5,7 +5,7 @@ RSpec.describe Nmax::Application do
   let(:file) { File.open(file_path) }
 
   context 'when valid params' do
-    let(:n) { '7' }
+    let(:n) { '100' }
 
     subject { Nmax::Application.new(file, n).call }
 
@@ -19,8 +19,20 @@ RSpec.describe Nmax::Application do
 
     subject { Nmax::Application.new(file, n).call }
 
-    it '.process_numbers outputs an array of integers' do
+    it 'return \'wrong argument\'' do
       expect(subject).to eq('wrong argument')
+    end
+  end
+
+  context 'when n is big' do
+    let(:n) { '6' }
+    let(:file_path) { File.dirname(__FILE__) + '/../fixtures/small_file.txt' }
+    let(:file) { File.open(file_path) }
+
+    subject { Nmax::Application.new(file, n).call }
+
+    it 'return \'there are no such numbers\'' do
+      expect(subject).to eq('there are no such numbers')
     end
   end
 end

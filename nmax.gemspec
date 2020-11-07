@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
   spec.files = Dir['lib/**/*.rb']
-  spec.bindir = 'exe'
-  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = ['nmax']
   spec.require_paths = ['lib']
 end
