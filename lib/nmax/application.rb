@@ -11,13 +11,13 @@ module Nmax
     NOT_SUCH_NUMBER = 'there are no such numbers'
 
     def initialize(file, number)
-      WRONG_ARGUMENT && return if number.size.zero? && !number.to_i.positive?
-
       self.file = file
       self.number = number.to_i
     end
 
     def call
+      return WRONG_ARGUMENT unless number.positive?
+
       result = search
 
       return_numbers(result)

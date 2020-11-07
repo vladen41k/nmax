@@ -1,6 +1,5 @@
-require "nmax/version"
-
 module Nmax
-  class Error < StandardError; end
-  # Your code goes here...
+  require 'nmax/version'
+  require_relative 'nmax/application'
 end
+
