@@ -3,5 +3,4 @@
 
 require_relative '../lib/nmax/application'
 
-app = Nmax::Application.new.call(STDIN, ARGV[0])
-app.run!
+Nmax::Application.new.call(STDIN, ARGV[0]).call

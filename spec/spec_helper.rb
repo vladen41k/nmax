@@ -1,4 +1,4 @@
-require 'bundler'
+require 'bundler/setup'
 require 'nmax'
 
 RSpec.configure do |config|
