@@ -8,7 +8,7 @@
     cd nmax
     export PATH="./bin:$PATH"
     setup
-    cat PATH_TO_YOUR_FILE | bundle exec nmax < N >
+    cat PATH_TO_YOUR_FILE | nmax < N >
 
 ## License
 
